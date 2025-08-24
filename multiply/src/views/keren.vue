@@ -64,17 +64,9 @@ export default {
   name: "keren",
   components: {Eq, Violet, Gp, About, Fider, Stragety, Shuk, Track, Team, Risks,Investor,Docs,Meet,Fund },
   methods: {
-    Get_Word(text){
-      return text
-    },
   },
    data() {
-    return {
-      
-     
-      
-      
-      
+    return {   
     }
   } 
 }
@@ -261,21 +253,4 @@ export default {
   }
 
   }
-
-$breakpoints: (
-  mobile: 480px,
-  tablet: 768px,
-  laptop: 1024px
-);
-
-@mixin respond($device) {
-  @media (max-width: map-get($breakpoints, $device)) {
-    @content;
-  }
-}
-
-
-
-
-
 </style>
