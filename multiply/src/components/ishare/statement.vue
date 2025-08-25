@@ -68,4 +68,17 @@ export default {
         line-height: 1.5rem;
         color: black;
     }
+    @media (max-width: 768px) {
+        .p-text{
+            width: 100%;
+      margin: 0;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      color: black;
+      line-height: 1.6;
+      padding:0.5rem 0;
+      word-wrap: break-word;
+        }
+    }
 </style>

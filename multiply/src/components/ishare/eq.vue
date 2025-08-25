@@ -207,5 +207,8 @@ padding-left: 2rem;
     font-size: 0.9rem;
     margin-right:1rem;
   }
+  .bigger{
+    font-size: 1.2rem;
+  }
 }
 </style>

@@ -79,17 +79,28 @@ export default {
   }
 }
  
-  @media (max-width: 1024px) {
-    .about-cubes{
+  @media (max-width: 850px) {
+    .risks-cubes{
       grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1rem;
+      justify-items: center;
+    }
+    .risks-cards{
+      max-width: 300px; 
+      width: 100%;
     }
 
   }
 
   @media (max-width: 600px) {
-    .about-cubes{
+    .risks-cubes{
       grid-template-columns: 1fr;
-      margin-bottom: 1rem;
+      margin: 2rem 0 2rem 0;
+      justify-items: center;
+    }
+    .risks-cards{
+      max-width: 300px; 
+      width: 100%;
     }
   }
 

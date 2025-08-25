@@ -75,4 +75,11 @@ export default {
   flex: 0 0 auto;
 }  
 }
+
+
+@media (max-width: 768px) {
+  .logo-name{
+    width:80%
+  }
+}
 </style>

@@ -132,18 +132,33 @@ export default {
 
   
  
-  @media (max-width: 1024px) {
+  @media (max-width: 850px) {
     .about-cubes{
       grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1rem;
+      justify-items: center; 
+      width:100%
+    }
+    .about-cards{
+      max-width: 300px; 
+      width: 100%;
     }
 
   }
 
   @media (max-width: 600px) {
     .about-cubes{
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(1, 1fr);
       margin-bottom: 1rem;
+      justify-items: center; 
+      width:100%
+
     }
+    .about-cards{
+      max-width: 300px; 
+      width: 100%;
+    }
+    
   }
 
 </style>
