@@ -37,6 +37,7 @@
 <script>
 export default {
   name: "Eq",
+
   data() {
     return {
       title: "תשואת מטרה",
