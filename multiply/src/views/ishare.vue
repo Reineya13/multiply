@@ -1,5 +1,4 @@
 <template>
-
     <div id="ishare">
         <!-- eq -->
           <div id="eq">
@@ -24,12 +23,13 @@
               </div>
             </div>
 
-            <div class="eq-black-box">
+            <a class="eq-black-box" href="/ishare" >
               <span class="eq-white-text">{{ eq.add }}</span>
               <div class="eq-circle">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" id="plus" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path></svg>
               </div>
-            </div>
+              
+            </a>
           </div>
           <!-- end eq -->
           <!-- overview -->
@@ -87,12 +87,7 @@
                     </div>
                   </div>
             </Product_doc>
-            
             <Meeting link="https://calendly.com"></Meeting> 
-
-
-
-
     </div>
     </template>
 
@@ -163,10 +158,16 @@ import Meeting from '@/components/ishare/meeting.vue';
 }
 :root {
     --eq-text-color: black;
-    --eq-font-size: 16px;
+    --border-color: #D9D9D9;
+    --border-radius: 35px;
+    --border-width: 0.01rem;
+    --small-border-radius: 10px;
+    --font-size: 1.1rem;
     --eq-font-weight: 400;
-    --eq-line-height: 16px;
+    --card-title-size:1.25rem;
+    --line-height: 1.4rem;
     --center-flex: center;
+    --card-max-width:300px;
   }
 #ishare{
     display: flex;
@@ -182,9 +183,6 @@ import Meeting from '@/components/ishare/meeting.vue';
   display:flex;
   justify-self: center;
 }
-
-
-
 @media (max-width: 768px) {
   #ishare{
     padding: 0.5rem;
@@ -196,59 +194,25 @@ import Meeting from '@/components/ishare/meeting.vue';
   display: flex;
   flex-direction: column;
 }
-  
-
 .img-container{
  width:100%;
  height:auto;
  
 }
-
-
-.header{
-  width: 100%;
-  max-width: 1000px;
-  height: 3rem;
-  max-height: 50px;
-  background: #D9D9D9;
-  border-radius: 70px;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  padding-right: 2vw;
-  margin-bottom: 2vh;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.border{
-  border: #dfdfdf solid 1px;
-  border-radius: 10px;
-  padding: 20px;
-  gap: 20px;
-}
-
 .title {
   text-align: right;
   color: black;
-  font-size: 18px;
+  font-size: 1.13rem;
   font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border:0;
-  
+  border:0;  
 }
-
-
      .mobile-title {
     display:none;
 }
-.meeting{
-  width:90%;
-}
-
   @media (max-width: 768px) {
     .header{
       background:none;
@@ -259,7 +223,6 @@ import Meeting from '@/components/ishare/meeting.vue';
     }
     .title{
       color: black;
-      
     }
     .img-container{
     display:none; 
@@ -277,9 +240,9 @@ import Meeting from '@/components/ishare/meeting.vue';
   // eq style
   #eq {
   background: white;
-  border-radius: 70px;
-  outline: 2px #B7EBEB solid;
-  outline-offset: -2px;
+  border-radius: 3rem;
+  outline: 0.1rem #B7EBEB solid;
+  outline-offset: -0.1rem;
   margin: 1rem auto;
   padding:0.5rem;
   display: flex;
@@ -319,16 +282,20 @@ padding-left: 2rem;
   left: -1.5rem; 
   top: 50%;
   transform: translateY(-50%);
-  width: 0.5px;
+  width: var(--border-width);
   height: 80%;
   background: #A3A3A3;
   
+}
+.eq-link{
+  text-decoration: none;
+  color: white;
 }
 
 .eq-black-box {
   background: black;
   color: white;
-  border-radius: 35px;
+  border-radius: var(--border-radius);
   width: 30%;
   padding: 0.3rem 0.3rem 0.3rem 2.5rem;
   display: flex;
@@ -336,14 +303,15 @@ padding-left: 2rem;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  text-decoration: none;
   
 }
 
 .eq-circle {
-  width: 45px;
-  height: 45px;
+  width: 2.8rem;
+  height: 2.8rem;
   background: white;
-  border: 1px solid black;
+  border: var(--border-width) solid black;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -358,6 +326,10 @@ padding-left: 2rem;
 .eq-white-text {
   font-weight: 500;
   
+}
+#plus{
+  width: 1.8rem;
+  height: auto;
 }
 
 
@@ -391,14 +363,19 @@ padding-left: 2rem;
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 60%; 
-    position: relative;
-    
+    height: 60%;  
   }
+ 
+
   .eq-item:nth-child(1),
   .eq-item:nth-child(3) {
-    border-left: 1px solid #A3A3A3; 
+    border-left: var(--border-width) solid #A3A3A3; 
   }
+  .eq-item:nth-child(2),
+  .eq-item:nth-child(4) {
+    border-left:none; 
+  }
+ 
   .eq-black-box {
     order: -1;
     width: 100%;
@@ -442,7 +419,7 @@ padding-left: 2rem;
     display: flex;
     flex-direction: column;
     color: black;
-    line-height: 1.4;
+    line-height: var(--line-height);
     word-wrap: break-word;
   }
 
@@ -464,9 +441,7 @@ padding-left: 2rem;
   #overview{
    
     .pic_of_div{
-        min-width: auto;
-        width:100%;
-        
+       object-fit: cover;
     }
     .main-text{
       width: 100%;
@@ -475,7 +450,7 @@ padding-left: 2rem;
       display: flex;
       flex-direction: column;
       color: black;
-      line-height: 1.4;
+      line-height: var(--line-height);
       word-wrap: break-word;  
     }
   }    
@@ -497,8 +472,8 @@ padding-left: 2rem;
   
     .details-cards {
         background: #fff;
-        border: 1px solid #dfdfdf;
-        border-radius: 10px;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: var(--small-border-radius);
         padding: 2.5rem;
         text-align: center;
         display: flex;
@@ -509,12 +484,12 @@ padding-left: 2rem;
     }
     
     .card-title {
-    font-size: 20px;
+    font-size: var(--card-title-size);
     font-weight: 700;
     color: black;
   }
   .other-title {
-    font-size: 20px;
+    font-size: var(--card-title-size);
     font-weight: 700;
     color: black;
     display:block;
@@ -522,13 +497,13 @@ padding-left: 2rem;
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: var(--font-size);
     font-weight: 400;
     color: black;
   }
 
   .extra-title {
-    font-size:16px;
+    font-size:var(--font-size);
     font-weight: 700;
     color: #171717;
     display:block;
@@ -544,7 +519,7 @@ padding-left: 2rem;
 
 .details-title{
     margin:0 1rem;
-    font-size: 20px;
+    font-size: var(--card-title-size);
     font-weight: 700;
 }
   
@@ -559,7 +534,7 @@ padding-left: 2rem;
       width:100%
     }
     .details-cards{
-      max-width: 300px; 
+      max-width: var(--card-max-width); 
       width: 100%;
     }
 
@@ -574,7 +549,7 @@ padding-left: 2rem;
 
     }
     .details-cards{
-      max-width: 300px; 
+      max-width: var(--card-max-width); 
       width: 100%;
     }
     
@@ -594,8 +569,8 @@ padding-left: 2rem;
   
     .risks-cards {
         background: #F6F8FA;
-        border: 1px solid #dfdfdf;
-        border-radius: 10px;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: var(--small-border-radius);
         padding: 1rem;
         text-align: center;
         display: flex;
@@ -606,12 +581,12 @@ padding-left: 2rem;
     }
     
     .card-title {
-    font-size: 18px;
+    font-size: var(--card-title-size);
     font-weight: 700;
     color: black;
   }
   .subtitle {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     color: black;
   }
@@ -624,7 +599,7 @@ padding-left: 2rem;
       justify-items: center;
     }
     .risks-cards{
-      max-width: 300px; 
+      max-width: var(--card-max-width); 
       width: 100%;
     }
 
@@ -637,7 +612,7 @@ padding-left: 2rem;
       justify-items: center;
     }
     .risks-cards{
-      max-width: 300px; 
+      max-width: var(--card-max-width); 
       width: 100%;
     }
   }
@@ -647,9 +622,9 @@ padding-left: 2rem;
   // start product_doc
   
     .state-border{
-        border: 1px solid #dfdfdf;
+        border: var(--border-width) solid var(--border-color);
         background-color: #ffffff;
-        border-radius: 10px;
+        border-radius: var(--small-border-radius);
         text-align: start;
         display: flex;
         flex-direction: column;
