@@ -87,7 +87,12 @@
                     </div>
                   </div>
             </Product_doc>
+            
             <Meeting link="https://calendly.com"></Meeting> 
+
+
+
+
     </div>
     </template>
 
@@ -103,6 +108,7 @@ import Meeting from '@/components/ishare/meeting.vue';
         data() {
             return {
               eq: {title: "תשואת מטרה", eq_title_1:"תקופת נעילה",eq_answer:"bank of america",eq_text_1:" 12 חודשים",eq_title_2:"מטבע השקעה",eq_title_3:"מינימום השקעה",add:"הוסף את קרן לרכישה עתידית",},
+              
               overview:{ 
                 title:"סקירה כללית",
                 pargraphs: [
@@ -240,23 +246,26 @@ import Meeting from '@/components/ishare/meeting.vue';
   // eq style
   #eq {
   background: white;
+  width:100%;
   border-radius: 3rem;
   outline: 0.1rem #B7EBEB solid;
   outline-offset: -0.1rem;
-  margin: 1rem auto;
-  padding:0.5rem;
+  margin: 1rem 0;
+  padding:0.5rem 0.5rem;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-self: center;
-  justify-content: space-between;
+  justify-content: start;
   flex-wrap: wrap;
-  gap: 0.1rem;
+  gap: 2rem;
 
   .eq-data {
   display: flex;
   justify-content: center; 
-  gap: 3rem; 
+  align-items: center;
+  justify-self:center;
+  gap: 0.8rem; 
   flex-wrap: wrap; 
   flex-direction: row-reverse;
 }
@@ -266,7 +275,8 @@ import Meeting from '@/components/ishare/meeting.vue';
   flex-direction: column;
   align-items: center; 
   text-align: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  padding-left:0.5rem;
   min-width: 8rem; 
 }
 .eq-item-1{
@@ -276,16 +286,8 @@ padding-left: 2rem;
     font-size: 1.6rem;
   }
 
-  .eq-item + .eq-item::before {
-  content: '';
-  position: absolute;
-  left: -1.5rem; 
-  top: 50%;
-  transform: translateY(-50%);
-  width: var(--border-width);
-  height: 80%;
-  background: #A3A3A3;
-  
+ .eq-item + .eq-item {
+  border-left: 0.01rem solid #A3A3A3;
 }
 .eq-link{
   text-decoration: none;
@@ -296,15 +298,17 @@ padding-left: 2rem;
   background: black;
   color: white;
   border-radius: var(--border-radius);
-  width: 30%;
-  padding: 0.3rem 0.3rem 0.3rem 2.5rem;
+  width: 35%;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   gap: 0.5rem;
+  margin-right:0;
   text-decoration: none;
-  
+
+ 
 }
 
 .eq-circle {
@@ -325,6 +329,8 @@ padding-left: 2rem;
 
 .eq-white-text {
   font-weight: 500;
+  width:50%;
+  word-wrap: break-word;
   
 }
 #plus{
@@ -344,15 +350,17 @@ padding-left: 2rem;
     padding: 0.5rem;
     outline: none;
     justify-content: center;
-    margin: 0;
+    margin-bottom:1rem ;
     grid-auto-rows: 1fr;
+    gap:0.5rem;
+    
   
     .eq-data {
    display: grid;
     grid-template-columns: repeat(2, minmax(120px, 200px)); 
     justify-content: center;
     place-content: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
     align-items: stretch;
     margin-top: 1rem;
     
@@ -382,6 +390,7 @@ padding-left: 2rem;
     justify-content: center;
     padding: 1rem 0.5rem;
     position: relative;
+    gap:1rem;
   }
   .eq-circle {
     width: 2.5rem;
@@ -390,13 +399,15 @@ padding-left: 2rem;
     right: 0.3rem;
     top: 50%;
     transform: translateY(-50%);
+    
   }
   .eq-circle span {
     font-size: 1.2rem;
   }
   .eq-white-text {
     font-size: 0.9rem;
-    margin-right:1rem;
+    margin-right:auto;
+    width:75%;
   }
   .bigger{
     font-size: 1.2rem;
@@ -410,6 +421,7 @@ padding-left: 2rem;
   margin-bottom: 3rem;
 .pic_of_div{
   object-fit: fill;
+  width:100%;
   max-height:330px;
 }
 .main-text {
@@ -441,7 +453,9 @@ padding-left: 2rem;
   #overview{
    
     .pic_of_div{
-       object-fit: cover;
+        min-width: auto;
+        width:100%;
+        
     }
     .main-text{
       width: 100%;
@@ -534,7 +548,7 @@ padding-left: 2rem;
       width:100%
     }
     .details-cards{
-      max-width: var(--card-max-width); 
+      max-width: 300px; 
       width: 100%;
     }
 
@@ -549,7 +563,7 @@ padding-left: 2rem;
 
     }
     .details-cards{
-      max-width: var(--card-max-width); 
+      max-width: 300px; 
       width: 100%;
     }
     
@@ -599,7 +613,7 @@ padding-left: 2rem;
       justify-items: center;
     }
     .risks-cards{
-      max-width: var(--card-max-width); 
+      max-width: 300px; 
       width: 100%;
     }
 
@@ -612,7 +626,7 @@ padding-left: 2rem;
       justify-items: center;
     }
     .risks-cards{
-      max-width: var(--card-max-width); 
+      max-width: 300px; 
       width: 100%;
     }
   }

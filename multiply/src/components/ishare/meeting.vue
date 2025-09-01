@@ -1,5 +1,5 @@
 <template>
-<a class="document-header-responsive" id="meeting" :href="link" target="_blank">
+<a class="" id="meeting" :href="link" target="_blank">
       <!-- לוגו ושם -->  
           <div class="logo-name">
             <div class="report" id="report">
@@ -32,13 +32,30 @@ export default {
 </script>
 
 <style lang="scss">
+
 #meeting{
+  display: flex;
+  align-items: center;
+  background: #F6F8FA;
+  justify-content: space-between;
   padding:1rem;
   margin: 1.5rem 0 1.5rem 0;
   text-decoration: none;
+   border-radius: 0.7rem;
+  flex-wrap: wrap; 
+  cursor: pointer;
+
   .logo-name{
+    display:flex;
    gap:1rem; 
    padding: 0.3rem 0 0.4rem 0;
+   .subtitle {
+  text-align: right;
+  color: #8A8A8A;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
   }
   .chevron-left {
   flex: 0 0 auto;

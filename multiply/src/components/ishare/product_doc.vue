@@ -115,7 +115,9 @@ export default {
   height: auto;
 }
 }
-
+.subtitle{
+  width:80%;
+}
 
   
 }

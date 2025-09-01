@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import keren from '../views/keren.vue'
+import fund from '../views/fund.vue'
 import ishare from '@/views/ishare.vue'
 
 const routes = [
     {
         path: '/',
-        name: 'keren',
-        component: keren
+        name: 'fund',
+        component: fund
     },
     {
         path: '/ishare',
